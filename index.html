@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satyam Prajapati | Portfolio</title>
+    <style>
+        :root {
+            --navy: #0f2447;
+            --navy-dark: #0a1930;
+            --teal: #0f766e;
+            --bg: #f5f6f8;
+            --card: #ffffff;
+            --border: #e2e5ea;
+            --text: #1e2430;
+            --muted: #5b6472;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        a { color: inherit; text-decoration: none; }
+        
+        /* Header */
+        header {
+            background: var(--navy);
+            color: #fff;
+            text-align: center;
+            padding: 48px 20px 36px;
+        }
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        header p {
+            margin-top: 8px;
+            font-size: 1.05rem;
+            color: #c9d3e4;
+        }
+        header .roll-no {
+            margin-top: 14px;
+            font-size: 0.9rem;
+            color: #9db0cf;
+        }
+
+        /* Hero */
+        .hero {
+            background: var(--navy);
+            padding: 70px 20px;
+        }
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .hero-text {
+            flex: 1 1 420px;
+            max-width: 560px;
+        }
+        .hero-text h1 {
+            color: #fff;
+            font-size: 2.6rem;
+            font-weight: 800;
+            line-height: 1.25;
+        }
+        .hero-text h1 span {
+            color: #38bdf8;
+        }
+        .hero-text p {
+            margin-top: 18px;
+            color: #c9d3e4;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .hero-btn {
+            display: inline-block;
+            margin-top: 26px;
+            background: #38bdf8;
+            color: #08131f;
+            font-weight: 700;
+            padding: 13px 26px;
+            border-radius: 8px;
+            font-size: 0.98rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .hero-btn:hover {
+            background: #5cc8fa;
+            transform: translateY(-2px);
+        }
+        .hero-photo {
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        .hero-photo img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #33415c;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        }
+
+        @media (max-width:700px) {
+            .hero-inner { flex-direction: column-reverse; text-align: center; }
+            .hero-text { max-width: 100%; }
+            .hero-text h1 { font-size: 2rem; }
+            .hero-photo img { width: 200px; height: 200px; }
+        }
+
+        /* Nav */
+        nav {
+            background: var(--navy-dark);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: #dfe6f2;
+            padding: 14px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        nav a:hover {
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+        }
+
+        /* Sections */
+        main {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 36px 20px 60px;
+        }
+        section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 26px 30px;
+            margin-bottom: 26px;
+            box-shadow: 0 1px 3px rgba(20,30,50,0.05);
+        }
+        section h2 {
+            color: var(--navy);
+            font-size: 1.3rem;
+            border-bottom: 2px solid var(--teal);
+            display: inline-block;
+            padding-bottom: 6px;
+            margin-bottom: 16px;
+        }
+        section p {
+            color: var(--text);
+            font-size: 0.98rem;
+        }
+        section ul {
+            list-style: disc;
+            padding-left: 22px;
+            font-size: 0.96rem;
+        }
+        section ul li {
+            margin-bottom: 6px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill-tag {
+            background: #eef2f8;
+            border: 1px solid var(--border);
+            color: var(--navy);
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        /* Education / Experience */
+        .edu-item {
+            margin-bottom: 14px;
+        }
+        .edu-item h3 {
+            font-size: 1.02rem;
+            color: var(--text);
+        }
+        .edu-item span {
+            display: block;
+            font-size: 0.87rem;
+            color: var(--muted);
+            margin-top: 2px;
+        }
+
+        /* Projects */
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 18px;
+            background: #fafbfc;
+        }
+        .project-card h3 {
+            font-size: 1rem;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+        .project-card p {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+        .project-card .tags {
+            margin-top: 10px;
+            font-size: 0.78rem;
+            color: var(--teal);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-dark);
+            color: #9db0cf;
+            text-align: center;
+            padding: 16px;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 700px) {
+            header h1 { font-size: 1.7rem; }
+            nav { flex-direction: column; align-items: center; }
+            nav a { width: 100%; text-align: center; padding: 12px; }
+            section { padding: 20px; }
+        }
+        @media (max-width: 420px) {
+            header { padding: 36px 14px 28px; }
+            header h1 { font-size: 1.4rem; }
+            header p { font-size: 0.9rem; }
+            section h2 { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h1>Hi, I'm <span>Satyam</span></h1>
+                <p>
+                    I'm a Computer Engineering student at Marwadi University, passionate about cloud infrastructure, AI, and full-stack development. I enjoy building clean, responsive web applications and turning ideas into practical, user-friendly digital experiences.
+                </p>
+                <a href="#contact" class="hero-btn">Let's Connect</a>
+            </div>
+            <div class="hero-photo">
+                <img src="profile.jpg" alt="Satyam Prajapati">
+            </div>
+        </div>
+    </section>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                Bachelor of Technology student in Computer Engineering at Marwadi University, having completed 12th Science at Bharad. Interested in cloud infrastructure, AI, and full-stack development, with hands-on experience building web applications, an internship at Way to Web, and technology work supporting small businesses.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Web Development</span>
+                <span class="skill-tag">Platform as a Service (PaaS)</span>
+                <span class="skill-tag">Software as a Service (SaaS)</span>
+                <span class="skill-tag">Cloud Computing</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">SQL / PL-SQL</span>
+                <span class="skill-tag">HTML &amp; CSS</span>
+            </div>
+        </section>
+
+        <section id="languages">
+            <h2>Languages</h2>
+            <ul>
+                <li>Gujarati - Native or Bilingual</li>
+                <li>Hindi - Full Professional</li>
+                <li>English - Professional Working</li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="edu-item">
+                <h3>Bachelor of Technology, Computer Engineering</h3>
+                <span>Marwadi University (2026 to 2029)</span>
+            </div>
+            <div class="edu-item">
+                <h3>12th Science</h3>
+                <span>Bharad Vishva Vidhyapith</span>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="edu-item">
+                <h3>Fresher</h3>
+                <span>Actively seeking opportunities to apply and grow technical skills</span>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h3>MobileHub - Responsive Mobile Shop Website</h3>
+                <p>
+                    A responsive front-end website for a mobile phone shop, planned with Figma/Canva wireframes before development. Includes a Client Site (browse brands, view specs, compare models, explore accessories, check offers, contact form) and an Admin Site (login, dashboard, product and offer management, profile editing) ten pages total. Features interactive JavaScript elements such as image sliders, product search, category filters, dark mode, product comparison, and form validation. Built as a front-end-only project using sample data to demonstrate modern responsive web design without a backend or database.
+                </p>
+                <div class="tags">HTML CSS JavaScript</div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <ul>
+                <li>Google Certificate</li>
+                <li>Prompt Engineering Certificate</li>
+                <li>PL/SQL Certificate</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>
+                Email: <a href="mailto:satyam.prajapati137791@marwadiuniversity.ac.in" style="color:var(--teal);">satyam.prajapati137791@marwadiuniversity.ac.in</a><br>
+                Phone No: 9274117641<br>
+                Location: Rajkot, Gujarat<br>
+                LinkedIn: <a href="https://www.linkedin.com/in/satyam-prajapati" style="color:var(--teal);">linkedin.com/in/satyam-prajapati</a><br>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Satyam Prajapati. All Rights Reserved.
+    </footer>
+</body>
+</html>
